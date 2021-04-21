@@ -1,10 +1,10 @@
 require 'pry'
 require 'rubocop'
 require 'dotenv'
-load 'lib/bot_like_tweet.rb'
-load 'lib/bot_follow_by_tweet.rb'
-load 'lib/bot_follow_by_tweet_live.rb'
-load 'lib/bot_5_random_tweet.rb'
+require_relative 'bot_like_tweet.rb'
+require_relative 'bot_follow_by_tweet.rb'
+require_relative 'bot_follow_by_tweet_live.rb'
+require_relative 'bot_5_random_tweet.rb'
 
 puts "___________________________________________________________________"
 puts "                 Bonjour, que voulez vous faire ?                 "
@@ -18,11 +18,11 @@ puts "___________________________________________________________________"
 print ">>>> "
 user_choose=gets.chomp.to_i
 if user_choose==1
-  bot_random_tweet(client,handles_array)
+  bot_random_tweet(client, handles_array)
   elsif user_choose==2
     bot_like(client)
   elsif user_choose==3
     fallow_by_hashtag(client)
   elsif user_choose==4
-    fallow_by_hashtag_live(client,client2)
+    fallow_by_hashtag_live(client, client2)
 end
